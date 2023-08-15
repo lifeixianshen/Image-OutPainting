@@ -20,8 +20,7 @@ class Data():
 	def _load_data(self):
 		datas = np.load(os.path.join(DATA_PATH, self.files[self.file_counter]))
 		self.X = []
-		for data in datas:
-			self.X.append(data)
+		self.X.extend(iter(datas))
 		shuffle(self.X)
 		self.X = np.asarray(self.X)
 		self.file_counter += 1
@@ -59,8 +58,7 @@ class TestData():
 	def _load_data(self):
 		datas = np.load(os.path.join(TEST_PATH, self.files[self.file_counter]))
 		self.X = []
-		for data in datas:
-			self.X.append(data)
+		self.X.extend(iter(datas))
 		shuffle(self.X)
 		self.X = np.asarray(self.X)
 		self.file_counter += 1

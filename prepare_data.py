@@ -38,10 +38,10 @@ def dump_numpy(data, is_train_data=True):
 	random.shuffle(data)
 	if is_train_data:
 		train_dump_counter += 1
-		path = os.path.join(train_save_path, 'train_data_' + str(train_dump_counter))
+		path = os.path.join(train_save_path, f'train_data_{train_dump_counter}')
 	else:
 		test_dump_counter += 1
-		path = os.path.join(test_save_path, 'test_data_' + str(test_dump_counter))
+		path = os.path.join(test_save_path, f'test_data_{test_dump_counter}')
 	np.save(path, data)
 
 
